@@ -18,11 +18,14 @@ func main() {
 	for arg := range flag.Args() {
 		name := flag.Arg(arg)
 		fmt.Printf("Masking %s.\n", name)
-		f, err := os.Open(name)
+		f, err := os.OpenFile(name, os.O_WRONLY, 0755)
 		if err != nil {
 			panic(err)
 		}
 		defer f.Close()
 		_, err = f.WriteAt(bootdata, 0x40)
+		if err != nil {
+			panic(err)
+		}
 	}
 }
