@@ -3,7 +3,7 @@
 builds:
 - env:
   - CGO_ENABLED=0
-  main: ./main.go
+  main: .
   goos:
     - darwin
     - linux
