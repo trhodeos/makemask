@@ -10,6 +10,8 @@ builds:
     - windows
   goarch:
     - amd64
+    - arm64
+    - arm
 
 checksum:
   name_template: 'checksums.txt'
